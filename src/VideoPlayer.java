@@ -56,7 +56,7 @@ public class VideoPlayer extends javax.swing.JFrame {
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         ListSong = new javax.swing.JList<>();
-        jLayeredPane2 = new javax.swing.JLayeredPane();
+        LayerPlayAnBtn = new javax.swing.JLayeredPane();
         btnStereo = new javax.swing.JButton();
         SlicePlaying = new javax.swing.JSlider();
         btnRight = new javax.swing.JButton();
@@ -77,6 +77,11 @@ public class VideoPlayer extends javax.swing.JFrame {
         canvas1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 canvas1MouseClicked(evt);
+            }
+        });
+        canvas1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                canvas1MouseMoved(evt);
             }
         });
         jDesktopPane2.add(canvas1, java.awt.BorderLayout.CENTER);
@@ -111,9 +116,9 @@ public class VideoPlayer extends javax.swing.JFrame {
             .addComponent(jScrollPane1)
         );
 
-        jLayeredPane2.addMouseListener(new java.awt.event.MouseAdapter() {
+        LayerPlayAnBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLayeredPane2MouseEntered(evt);
+                LayerPlayAnBtnMouseEntered(evt);
             }
         });
 
@@ -150,22 +155,22 @@ public class VideoPlayer extends javax.swing.JFrame {
             }
         });
 
-        jLayeredPane2.setLayer(btnStereo, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(SlicePlaying, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(btnRight, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(SlideVolumn, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(btnLeft, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(btnPlay, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(btnAddSong, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerPlayAnBtn.setLayer(btnStereo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerPlayAnBtn.setLayer(SlicePlaying, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerPlayAnBtn.setLayer(btnRight, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerPlayAnBtn.setLayer(SlideVolumn, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerPlayAnBtn.setLayer(btnLeft, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerPlayAnBtn.setLayer(btnPlay, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        LayerPlayAnBtn.setLayer(btnAddSong, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
-        jLayeredPane2.setLayout(jLayeredPane2Layout);
-        jLayeredPane2Layout.setHorizontalGroup(
-            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+        javax.swing.GroupLayout LayerPlayAnBtnLayout = new javax.swing.GroupLayout(LayerPlayAnBtn);
+        LayerPlayAnBtn.setLayout(LayerPlayAnBtnLayout);
+        LayerPlayAnBtnLayout.setHorizontalGroup(
+            LayerPlayAnBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LayerPlayAnBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                .addGroup(LayerPlayAnBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LayerPlayAnBtnLayout.createSequentialGroup()
                         .addComponent(btnStereo)
                         .addGap(18, 18, 18)
                         .addComponent(btnRight)
@@ -173,7 +178,7 @@ public class VideoPlayer extends javax.swing.JFrame {
                         .addComponent(btnLeft)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnAddSong))
-                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                    .addGroup(LayerPlayAnBtnLayout.createSequentialGroup()
                         .addComponent(btnPlay)
                         .addGap(18, 18, 18)
                         .addComponent(SlicePlaying, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -181,23 +186,23 @@ public class VideoPlayer extends javax.swing.JFrame {
                 .addComponent(SlideVolumn, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jLayeredPane2Layout.setVerticalGroup(
-            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+        LayerPlayAnBtnLayout.setVerticalGroup(
+            LayerPlayAnBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LayerPlayAnBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(LayerPlayAnBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LayerPlayAnBtnLayout.createSequentialGroup()
+                        .addGroup(LayerPlayAnBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnStereo)
                             .addComponent(btnRight)
                             .addComponent(btnLeft)
                             .addComponent(btnAddSong))
                         .addGap(14, 14, 14)
-                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(LayerPlayAnBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnPlay)
                             .addComponent(SlicePlaying, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 43, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LayerPlayAnBtnLayout.createSequentialGroup()
                         .addComponent(SlideVolumn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addContainerGap())))
         );
@@ -216,7 +221,7 @@ public class VideoPlayer extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLayeredPane2))
+                .addComponent(LayerPlayAnBtn))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,7 +230,7 @@ public class VideoPlayer extends javax.swing.JFrame {
                     .addComponent(jDesktopPane2)
                     .addComponent(jLayeredPane1))
                 .addGap(0, 0, 0)
-                .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LayerPlayAnBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -293,11 +298,10 @@ public class VideoPlayer extends javax.swing.JFrame {
             if (b==false) {
                 b=true;
                 jLayeredPane1.setVisible(false);
-                jLayeredPane2.setVisible(false);
+                LayerPlayAnBtn.setVisible(false);
                 this.dispose();
                 setUndecorated(true);
-                //this.pack();
-                player.toggleFullScreen();
+                GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().setFullScreenWindow(this);
                 player.stop();
                 //this.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 this.setVisible(true);
@@ -310,7 +314,7 @@ public class VideoPlayer extends javax.swing.JFrame {
                 
             } else {
                 jLayeredPane1.setVisible(true);
-                jLayeredPane2.setVisible(true);
+                LayerPlayAnBtn.setVisible(true);
                 this.dispose();
                 b=false;                
                 this.setUndecorated(false);
@@ -374,9 +378,9 @@ public class VideoPlayer extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnPlayActionPerformed
 
-    private void jLayeredPane2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLayeredPane2MouseEntered
+    private void LayerPlayAnBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LayerPlayAnBtnMouseEntered
         jDesktopPane2.setVisible(true);
-    }//GEN-LAST:event_jLayeredPane2MouseEntered
+    }//GEN-LAST:event_LayerPlayAnBtnMouseEntered
 
     private void SlicePlayingMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SlicePlayingMouseDragged
         player.setTime(SlicePlaying.getValue());
@@ -385,6 +389,27 @@ public class VideoPlayer extends javax.swing.JFrame {
     private void SlicePlayingMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SlicePlayingMouseReleased
         player.setTime(SlicePlaying.getValue());
     }//GEN-LAST:event_SlicePlayingMouseReleased
+
+    Runnable r=new Runnable() {
+        @Override
+        public void run() {
+            LayerPlayAnBtn.setVisible(true);
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+            }
+            LayerPlayAnBtn.setVisible(false);
+            
+        }
+    };
+    Thread th;
+    private void canvas1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_canvas1MouseMoved
+        if(!LayerPlayAnBtn.isVisible()){
+            th=new Thread(r);
+            th.start();
+        }
+            
+    }//GEN-LAST:event_canvas1MouseMoved
 
     /**
      * @param args the command line arguments
@@ -423,6 +448,7 @@ public class VideoPlayer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLayeredPane LayerPlayAnBtn;
     private javax.swing.JList<String> ListSong;
     private javax.swing.JSlider SlicePlaying;
     private javax.swing.JSlider SlideVolumn;
@@ -434,7 +460,6 @@ public class VideoPlayer extends javax.swing.JFrame {
     private java.awt.Canvas canvas1;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
