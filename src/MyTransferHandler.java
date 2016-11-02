@@ -2,6 +2,7 @@
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
+import java.io.File;
 import javax.swing.DefaultListModel;
 import javax.swing.JComponent;
 import javax.swing.JList;
@@ -30,10 +31,15 @@ public class MyTransferHandler extends javax.swing.TransferHandler{
     }
     private int indices[];
     private Object[] values;
+    private File[] files;
     private String exportString(JComponent c){
         JList list=(JList)c;
         indices=list.getSelectedIndices();
         values=list.getSelectedValues();
+        files=new File[indices.length];
+        for(int i=0;i<indices.length;i++){
+            files[i]=VideoPlayer.arraySong.get(indices[i]);
+        }
 //        StringBuffer strBuild=new StringBuffer();
 //        for(int i=0;i<values.length;i++){
 //            Object val=values[i].toString();
@@ -90,15 +96,20 @@ public class MyTransferHandler extends javax.swing.TransferHandler{
 //            }
             for(int i=values.length-1;i>=0;i--){
                 mod.add(dropIndex, String.valueOf(values[i]));
+                VideoPlayer.arraySong.add(dropIndex, files[i]);
+                
             }
             int indexLength=indices.length;
             for(int i=0;i<indexLength;i++){
                 if(indices[i]>=dropIndex){
                     mod.remove(indices[i]-i+indexLength);
+                    VideoPlayer.arraySong.remove(indices[i]-i+indexLength);
+                    //VideoPlayer.arraySong.add(i, element);
                 }
                     
                 else{
                     mod.remove(indices[i]-i);
+                    VideoPlayer.arraySong.remove(indices[i]-i);
                 }                
             }        
         
